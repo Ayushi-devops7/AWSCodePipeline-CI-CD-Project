@@ -5,7 +5,7 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 522814708381.dkr.ecr.ap-south-1.amazonaws.com
-      - REPOSITORY_URI=522814708381.public.ecr.aws/v5i7z8a9/node-cicd-app
+      - REPOSITORY_URI=522814708381.dkr.ecr.ap-south-1.amazonaws.com/node-cicd-app
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)
   build:
     commands:
